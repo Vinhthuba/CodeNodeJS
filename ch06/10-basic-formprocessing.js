@@ -8,7 +8,7 @@ app.engine('handlebars', expressHandlebars({defaultLayout:'main'}))
 app.set('view engine','handlebars')
 
 //this necessary to parse from respones
-app.use(bodyParse.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({extended:false}))
 
 app.get('/thank-you',(req,res)=>res.render('10-thank-you'))
 
@@ -24,5 +24,6 @@ app.post('/process-contact', (req, res) => {
    })
    
    //the following is needed to use views 
-app.engine('handlebars',expressHandlebars({defaultLayout:'main'}))
-app.set('view engine','handlebars')
+
+   const port  = process.env.PORT || 3000 
+   app.listen(port, ()=> console.log( `\nnavigate to http:\\localhost:${port}/headers\n`))
