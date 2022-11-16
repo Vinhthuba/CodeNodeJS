@@ -1,8 +1,10 @@
 const express = require('express')
 const expressHandlebars = require('express-handlebars').engine
-const cookieParser = require('express-session')
+const cookieParser = require('cookie-parser')
+const session   = require('express-session')
 const catNames = require('cat-names')
 const app = express()
+
 
 
 //the following is needed
@@ -37,5 +39,5 @@ app.get('/set-random-username',(req,res)=>{
 app.get('*',(req,res)=>res.send('check out our "<a href=/about">About</a>" page!'))
 
 const port  = process.env.PORT || 3000 
- app.listen(port, ()=> console.log( `\nnavigate to http:\\localhost:${port}/headers\n`))
+ app.listen(port, ()=> console.log( `\nnavigate to http:\\localhost:${port}/greeting\n`))
    

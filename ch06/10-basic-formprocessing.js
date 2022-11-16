@@ -18,12 +18,11 @@ app.get('*', (req,res)=>res.render('10-home'))
 
 
 app.post('/process-contact', (req, res) => {
-    console.log(`received contact from ${req.body.name}
-   <${req.body.email}>`)
-    res.redirect(303, '10-thank-you')
+    console.log(`received contact from ${req.body.name}<${req.body.email}>`)
+    res.redirect(303, '/thank-you')
    })
    
    //the following is needed to use views 
 
    const port  = process.env.PORT || 3000 
-   app.listen(port, ()=> console.log( `\nnavigate to http:\\localhost:${port}/headers\n`))
+   app.listen(port, ()=> console.log( `\nnavigate to http:\\localhost:${port}\n`))
