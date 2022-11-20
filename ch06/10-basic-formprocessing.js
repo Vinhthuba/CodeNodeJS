@@ -18,7 +18,7 @@ app.get('*', (req,res)=>res.render('10-home'))
 
 
 app.post('/process-contact', (req, res) => {
-    console.log(`received contact from ${req.body.name}<${req.body.email}>`)
+    console.log(`received contact from ${req.body.name}    < ${req.body.email}>`)
     res.redirect(303, '/thank-you')
    })
    
