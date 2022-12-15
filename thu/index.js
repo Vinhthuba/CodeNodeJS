@@ -37,7 +37,7 @@ connection.connect(function(err){
 
 app.post('/process-contact', function(req, res){
 
-    var sql = "insert into users values(null,'"+ req.body.fullName +"','"+ req.body.email +"', '"+ req.body.message +"' )"
+    var sql = "insert into users values(null,'"+ req.body.fullName +"','"+ req.body.email +"', '"+ req.body.message +"', '"+ req.body.img  +"'  )"
     connection.query(sql, function (err) {
         if (err) throw err;
         res.render('thank-you', 'data saved successfully')
